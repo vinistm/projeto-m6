@@ -52,6 +52,7 @@ export default createGlobalStyle`
     button {
         font-family: 'Inter';
         font-style: normal;
+        cursor: pointer;
 
     }
     input {

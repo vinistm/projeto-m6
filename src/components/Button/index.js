@@ -9,6 +9,7 @@ const Button = ({
         type="button"
         backGround={backGround}
         textColor={textColor}
+        
         {...rest}
       >
         {children}

@@ -64,7 +64,7 @@ export const ModalTitle = styled.div`
   color: var(--grey-0);
 `;
 
-export const H7 = styled.h7`
+export const H5 = styled.h5`
   font-family: "Lexend", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -72,32 +72,4 @@ export const H7 = styled.h7`
 
 export const ModalBody = styled.div`
   padding: 40px 24px;
-`;
-
-export const YesButton = styled.div`
-  color: var(--white);
-  background-color: var(--darkblue);
-  border-radius: 5px;
-  padding: 5px 10px;
-  border: none;
-  &:hover {
-    cursor: pointer;
-    color: var(--darkblue);
-    background-color: var(--white);
-    border: 1px solid var(--darkblue);
-  }
-`;
-
-export const NoButton = styled.div`
-  color: var(--white);
-  background-color: var(--orange);
-  border-radius: 5px;
-  padding: 5px 10px;
-  border: none;
-  &:hover {
-    cursor: pointer;
-    color: var(--orange);
-    background-color: var(--white);
-    border: 1px solid var(--orange);
-  }
 `;

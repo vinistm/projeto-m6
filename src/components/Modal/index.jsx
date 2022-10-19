@@ -1,19 +1,20 @@
-import { useState } from "react";
 import {
   ModalMaterial,
   ConfirmModal,
   ModalTitle,
-  H7,
+  H5,
   ModalLock,
   ModalBody,
-  YesButton,
-  NoButton,
 } from "./style";
 
-const Modal = ({ children, title, width, height, type, ...rest }) => {
-  const [displayModal, setDisplayModal] = useState(true);
-  const [eventModalName, setEventModalName] = useState("");
-
+const Modal = ({
+  children,
+  title,
+  type,
+  displayModal,
+  setDisplayModal,
+  ...rest
+}) => {
   return (
     displayModal && (
       <ConfirmModal
@@ -21,16 +22,12 @@ const Modal = ({ children, title, width, height, type, ...rest }) => {
       >
         <ModalMaterial>
           <ModalTitle>
-            <H7>{title}?</H7>
+            <H5>{title}?</H5>
             <ModalLock onClick={() => setDisplayModal(false)}>
               &times;
             </ModalLock>
           </ModalTitle>
-          <ModalBody>
-            {children}
-            <YesButton onClick={() => console.log("Yes")}>Sim</YesButton>
-            <NoButton onClick={() => setDisplayModal(false)}>Não</NoButton>
-          </ModalBody>
+          <ModalBody>{children}</ModalBody>
         </ModalMaterial>
       </ConfirmModal>
     )
@@ -38,3 +35,20 @@ const Modal = ({ children, title, width, height, type, ...rest }) => {
 };
 
 export default Modal;
+
+/* 
+  Exemplo de uso na página
+  
+  const [displayMod, setDisplayMod] = useState(true);
+
+  <Modal
+  title={"Editar Anúncio"}
+  displayModal={displayMod}  
+  setDisplayModal={setDisplayMod}
+>
+  <div>Teste</div>
+  <div>outra div</div>
+  <div>terceira DIV</div>
+</Modal>; 
+
+*/

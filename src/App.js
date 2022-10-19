@@ -1,9 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import GlobalStyle from "./styles/global";
+import "./App.css";
+import Modal from "./components/Modal";
 
 function App() {
   return (
     <div className="App">
+      <GlobalStyle />
+      <Modal title={"Editar Anúncio"}>
+        <div>Aie</div>
+        <div>Aie</div>
+        <div>Aie</div>
+      </Modal>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

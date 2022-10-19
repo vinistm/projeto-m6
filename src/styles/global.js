@@ -42,6 +42,12 @@ export default createGlobalStyle`
         --random-11:#5700E3;
         --random-12:#30007D;
 
+        --heading-1:font-weight:700;
+        --heading-2:font-weight:600;
+        --heading-3:font-weight:500;
+
+
+
 
     }
     body{

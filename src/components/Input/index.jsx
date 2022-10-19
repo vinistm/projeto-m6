@@ -11,3 +11,5 @@ const Input = ({ label, register, name, error = false, ...rest }) => {
 };
 
 export default Input;
+
+/*modificação do input*/

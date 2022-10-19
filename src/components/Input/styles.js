@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: flex-start;
   width: 100%;
   margin-top: 1rem;
   input {
@@ -12,9 +12,6 @@ export const InputContainer = styled.div`
     background-color: var(--whiteFixed);
     border: 1px solid var(--grey-7);
     border-radius: 4px;
-  }
-  label {
-    color: var(--grey-1);
   }
   input::placeholder {
     padding-left: 5px;

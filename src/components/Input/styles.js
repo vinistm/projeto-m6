@@ -13,6 +13,9 @@ export const InputContainer = styled.div`
     border: 1px solid var(--grey-7);
     border-radius: 4px;
   }
+  label {
+    color: var(--grey-1);
+  }
   input::placeholder {
     padding-left: 5px;
     color: var(--grey-3);

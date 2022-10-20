@@ -1,13 +1,14 @@
+import { ButtonContainer } from "./styles";
 const Button = ({ children, backGround, textColor, ...rest }) => {
   return (
-    <button
-      type="button"
+    <ButtonContainer
+      type="ButtonContainer"
       backGround={backGround}
       textColor={textColor}
       {...rest}
     >
       {children}
-    </button>
+    </ButtonContainer>
   );
 };
 export { Button };

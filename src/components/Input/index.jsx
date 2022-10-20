@@ -1,17 +1,15 @@
 import { InputContainer } from "./styles";
 
-function Input({ label, register, name, error, ...rest }) {
+const Input = ({ label, register, name, error = false, ...rest }) => {
   return (
-    <>
-      <div>
-        {label}
-        {!!error && <span> - {error}</span>}
-      </div>
-      <InputContainer isErrored={!!error}>
-        <input {...register(name)} {...rest} />
-      </InputContainer>
-    </>
+    <InputContainer isErrored={!!error}>
+      <label htmlFor={label}>{label}</label>
+      <input {...register(name)} {...rest} />
+      {!!error && <span>{error}</span>}
+    </InputContainer>
   );
-}
+};
 
 export default Input;
+
+/*modificação do input*/

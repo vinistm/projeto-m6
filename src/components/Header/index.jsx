@@ -8,7 +8,10 @@ import {
   Menu,
   MenuContainer,
   NavBar,
+  TemporaryButton,
 } from "./style";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { FaTimes } from "react-icons/fa";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,8 +25,10 @@ const Header = () => {
           <CustomLink href="localhost:5000">Leilão</CustomLink>
         </div>
         <div>
-          <CustomLink href="localhost:5000">Fazer Login</CustomLink>
-          <CustomLink href="localhost:5000">Cadastrar</CustomLink>
+          <CustomLink color="var(--brand-1)" href="localhost:5000">
+            Fazer Login
+          </CustomLink>
+          <TemporaryButton href="localhost:5000">Cadastrar</TemporaryButton>
         </div>
       </Menu>
     );
@@ -39,9 +44,15 @@ const Header = () => {
           <NavContent />
         </NavBar>
         <DropDownNavBar>
-          <button onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? "X" : "---"}
-          </button>
+          {isOpen ? (
+            <span onClick={() => setIsOpen(!isOpen)}>
+              <FaTimes />
+            </span>
+          ) : (
+            <span onClick={() => setIsOpen(!isOpen)}>
+              <GiHamburgerMenu />
+            </span>
+          )}
           {isOpen && <NavContent isOpen={isOpen} />}
         </DropDownNavBar>
       </MenuContainer>

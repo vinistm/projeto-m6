@@ -6,7 +6,7 @@ export const HeaderContainer = styled.header`
   width: 100vw;
   height: 10vh;
   position: relative;
-  border-bottom: 2px solid grey;
+  border-bottom: 2px solid var(--grey-6);
 `;
 
 export const MenuContainer = styled.div`
@@ -14,7 +14,14 @@ export const MenuContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60%;
+  width: 70%;
+
+  span {
+    line-height: 1px;
+    font-weight: 600;
+    font-size: 18px;
+    font-family: "Inter";
+  }
 
   @media (max-width: 700px) {
     width: 30%;
@@ -22,7 +29,7 @@ export const MenuContainer = styled.div`
 `;
 
 export const FigureContainer = styled.div`
-  width: 35%;
+  width: 30%;
   display: flex;
   justify-content: center;
 
@@ -47,7 +54,7 @@ export const Menu = styled.div`
   justify-content: space-around;
   align-items: flex-start;
 
-  height: 40vh;
+  height: 60vh;
   width: 100vw;
 
   box-shadow: 0px 34px 70px 15px #4242421f;
@@ -63,7 +70,7 @@ export const Menu = styled.div`
   }
 
   div:first-of-type {
-    border-bottom: 2px solid grey;
+    border-bottom: 2px solid var(--grey-6);
   }
 
   @media (min-width: 700px) {
@@ -84,7 +91,7 @@ export const Menu = styled.div`
     }
 
     div:first-of-type {
-      border-right: 2px solid grey;
+      border-right: 2px solid var(--grey-6);
       border-bottom: none;
     }
   }
@@ -115,13 +122,30 @@ export const DropDownNavBar = styled.nav`
 
 export const CustomLink = styled.a`
   text-decoration: none;
-  color: black;
+  color: ${({ color }) => (color ? color : "var(--grey-2)")};
+  font-family: "Inter";
+  font-weight: 600;
 
   :active {
-    color: black;
+    color: ${({ color }) => (color ? color : "var(--grey-2)")};
   }
 
   :hover {
     cursor: pointer;
   }
+
+  @media (max-width: 700px) {
+    color: var(--grey-2);
+  }
+`;
+
+export const TemporaryButton = styled.button`
+  border: 1.5px solid var(--grey-4);
+  background: var(--whiteFixed);
+  padding: 0.4rem 0.5rem;
+  border-radius: 4px;
+
+  font-size: 1rem;
+  font-family: "Inter";
+  font-weight: 600;
 `;

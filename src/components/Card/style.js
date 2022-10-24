@@ -1,24 +1,44 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: var(--white);
+  background-color: transparent;
+  margin-top: 20px;
+  margin-left: 20px;
   border-radius: 8px;
   display: flex;
-  align-items: center;
   flex-direction: column;
   width: 250px;
-  height: 250px;
-  padding: 16px;
+  max-width: 100%;
+  height: 300px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: var(--black);
-  hr {
-    width: 80%;
-    margin-top: 16px;
-    margin-bottom: 16px;
+
+  .card-container p {
+    padding: 5px;
   }
-  button {
-    margin-top: 80px;
-    align-self: flex-end;
+  .card-image img {
+    width: 312px;
+    max-width: 100%;
+    height: 153px;
+    max-height: 100%;
   }
-  
+  .details {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .details p {
+    background-color: var(--brand-3);
+  }
+`;
+export const MainContainer = styled.div`
+  background-color: transparent;
+  border-radius: 2px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 1471px;
+  max-width: 100%;
+  height: 391px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;

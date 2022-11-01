@@ -9,7 +9,7 @@ import {
   MenuContainer,
   NavBar,
   TemporaryButton,
-} from "./styles";
+} from "./style";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 

@@ -1,13 +1,15 @@
 import Header from "../../components/Header"
-
+import SellerCard from "../../components/SellerCard";
+import { Container } from "./styles";
 
 const Advertising = () => {
     return (
       <>
         <Header />
-        <div>
-          <h1 color="black">oi</h1>
-        </div>
+        <Container>
+          <SellerCard></SellerCard>
+        </Container>
+        
       </>
     );
 }

@@ -1,4 +1,4 @@
-import { Container, MainContainer } from "./styles";
+import { Container, MainContainer } from "./style";
 
 function Card({ imageUrl, title, description, anunciante, price, year, km }) {
   return (
@@ -8,15 +8,15 @@ function Card({ imageUrl, title, description, anunciante, price, year, km }) {
           <img src={imageUrl} alt="" />
         </div>
         <div className="card-container">
-          <p>Título</p>
-          <p>Descrição</p>
+          <p>{title}</p>
+          <p>{description}</p>
           <div className="anunciante">
-            <p>Anunciante</p>
+            <p>{anunciante}</p>
           </div>
           <div className="details">
-            <p>km</p>
-            <p>year</p>
-            <p>price</p>
+            <p>{km}</p>
+            <p>{year}</p>
+            <p>{price}</p>
           </div>
         </div>
       </Container>

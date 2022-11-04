@@ -1,6 +1,19 @@
-import { Card, Container, Main } from "./style";
+import {
+  Aside,
+  Card,
+  Comments,
+  Container,
+  Description,
+  Galery,
+  Main,
+  ProductCover,
+  ProductDetail,
+  UserInfo,
+} from "./style";
 import { useVeicules } from "../../providers/veicules";
 import { useEffect } from "react";
+import { format } from "../../utils/formatter";
+import { Button } from "../../components/Button";
 
 const ProductDetails = () => {
   const { getVeicule, selectedVeicule } = useVeicules();
@@ -14,38 +27,70 @@ const ProductDetails = () => {
       <Main>
         <Card>
           {/*Imagem meramente ilustraiva e temporária */}
-          <img
+          <ProductCover
             src="https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/2021-cruze-premier/colorizer/01-images/colorizer-cinza-satin-steel.jpg?imwidth=960"
             alt="product"
           />
         </Card>
-        <Card>
+        <ProductDetail>
           <h2>{selectedVeicule.title}</h2>
           <div>
-            <span></span>
-            <span></span>
-            <button>Comprar</button>
+            <span> {selectedVeicule.year} </span>
+            <span> {selectedVeicule.km} KM</span>
           </div>
-          <span></span>
-        </Card>
-        <Card>
+          <span>{format(selectedVeicule.value)}</span>
+          <Button backGround="var(--brand-1)" textColor="var(--whiteFixed)">
+            Comprar
+          </Button>
+        </ProductDetail>
+        <Description>
           <h3>Descrição</h3>
           <p>{selectedVeicule.description}</p>
-        </Card>
+        </Description>
       </Main>
-      <aside>
-        <Card>
+      <Aside>
+        <Galery>
           <h3>Fotos</h3>
           <div>
-            <img src="" alt="icon" />
-            <img src="" alt="icon" />
-            <img src="" alt="icon" />
-            <img src="" alt="icon" />
-            <img src="" alt="icon" />
-            <img src="" alt="icon" />
+            <figcaption>
+              <img
+                src="https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/2021-cruze-premier/colorizer/01-images/colorizer-cinza-satin-steel.jpg"
+                alt="icon"
+              />
+            </figcaption>
+            <figcaption>
+              <img
+                src="https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/2021-cruze-premier/colorizer/01-images/colorizer-cinza-satin-steel.jpg"
+                alt="icon"
+              />
+            </figcaption>
+            <figcaption>
+              <img
+                src="https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/2021-cruze-premier/colorizer/01-images/colorizer-cinza-satin-steel.jpg"
+                alt="icon"
+              />
+            </figcaption>
+            <figcaption>
+              <img
+                src="https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/2021-cruze-premier/colorizer/01-images/colorizer-cinza-satin-steel.jpg"
+                alt="icon"
+              />
+            </figcaption>
+            <figcaption>
+              <img
+                src="https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/2021-cruze-premier/colorizer/01-images/colorizer-cinza-satin-steel.jpg"
+                alt="icon"
+              />
+            </figcaption>
+            <figcaption>
+              <img
+                src="https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/2021-cruze-premier/colorizer/01-images/colorizer-cinza-satin-steel.jpg"
+                alt="icon"
+              />
+            </figcaption>
           </div>
-        </Card>
-        <Card>
+        </Galery>
+        <UserInfo>
           <img src="" alt="" />
           <h4>Nome do Usuario</h4>
           <p>
@@ -54,10 +99,12 @@ const ProductDetails = () => {
             praesentium sunt facere voluptas similique cum deserunt vitae
             ratione vel dolor, ducimus ab.
           </p>
-          <button>Ver todos os anúncios</button>
-        </Card>
-      </aside>
-      <section>
+          <Button backGround="var(--brand-1)" textColor="var(--whiteFixed)">
+            Ver todos os anúncios
+          </Button>
+        </UserInfo>
+      </Aside>
+      <Comments>
         <Card>
           <h3>Comentários</h3>
           <div>
@@ -89,7 +136,7 @@ const ProductDetails = () => {
             <span>Opção 3</span>
           </div>
         </Card>
-      </section>
+      </Comments>
     </Container>
   );
 };

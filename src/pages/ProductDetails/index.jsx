@@ -2,7 +2,9 @@ import {
   Aside,
   Background,
   Card,
+  Comment,
   Comments,
+  CommentsTitle,
   Container,
   Description,
   Galery,
@@ -115,26 +117,25 @@ const ProductDetails = () => {
           </UserInfo>
         </Aside>
         <Comments>
-          <Card>
-            <h3>Comentários</h3>
+          <CommentsTitle>Comentários</CommentsTitle>
+          <Comment>
             <div>
-              <div>
-                <img
-                  src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-                  alt="icon"
-                />
-                <h6>Nome do usuario</h6>
-                <span>Há n dias</span>
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Pariatur beatae neque eum soluta illum saepe, rem velit. Cum,
-                in, pariatur, optio eum voluptatum fuga repellendus eos unde
-                animi voluptates voluptas.
-              </p>
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                alt="icon"
+              />
+              <h6>Nome do usuario</h6>
+              <div className="grey-dot"></div>
+              <span>Há n dias</span>
             </div>
-          </Card>
-          <Card>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+              beatae neque eum soluta illum saepe, rem velit. Cum, in, pariatur,
+              optio eum voluptatum fuga repellendus eos unde animi voluptates
+              voluptas.
+            </p>
+          </Comment>
+          <Comment>
             <div>
               <img
                 src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
@@ -151,7 +152,7 @@ const ProductDetails = () => {
               <span>Opção 2</span>
               <span>Opção 3</span>
             </div>
-          </Card>
+          </Comment>
         </Comments>
       </Container>
     </Background>

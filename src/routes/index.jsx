@@ -6,7 +6,7 @@ const Rotas = () => {
   return (
     <Routes>
       <Route path="/" element={<Advertising />} />
-      <Route path="/product" element={<ProductDetails />} />
+      <Route path="/product/:product_id" element={<ProductDetails />} />
     </Routes>
   );
 };

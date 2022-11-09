@@ -15,12 +15,14 @@ import { useVeicules } from "../../providers/veicules";
 import { useEffect } from "react";
 import { format } from "../../utils/formatter";
 import { Button } from "../../components/Button";
+import { useParams } from "react-router-dom";
 
 const ProductDetails = () => {
   const { getVeicule, selectedVeicule } = useVeicules();
+  const { product_id } = useParams();
 
   useEffect(() => {
-    getVeicule(1);
+    getVeicule(product_id);
   }, []);
 
   return (

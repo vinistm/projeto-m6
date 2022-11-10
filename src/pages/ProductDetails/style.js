@@ -1,18 +1,39 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  /* background: linear-gradient(blue white); */
-  background-color: var(--grey-7);
-  height: 100%;
+export const Background = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  height: 90vh;
+  overflow-y: scroll;
+  overflow-x: clip;
+  background-color: var(--grey-7);
 
-  @media (min-width: 700px) {
-    flex-direction: row;
+  .blue-cover {
+    position: absolute;
+    background-color: var(--brand-1);
+    height: 65vh;
+    width: 100%;
+    top: 0;
   }
 `;
 
-export const Main = styled.main`
+export const Container = styled.main`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+
+  @media (min-width: 700px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    padding: 40px;
+  }
+`;
+
+export const Main = styled.section`
   margin-top: 5%;
   width: 100%;
   display: flex;
@@ -20,25 +41,36 @@ export const Main = styled.main`
   align-items: center;
 
   @media (min-width: 700px) {
+    width: 65%;
+    margin: 0;
   }
 `;
-export const Aside = styled.aside`
+export const Aside = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (min-width: 700px) {
+    width: 35%;
+  }
 `;
 
 export const Comments = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin-top: 16px;
+  padding: 14px;
+
+  @media (min-width: 700px) {
+    width: 65%;
+  }
 `;
 
 export const ProductCover = styled.img`
-  width: 100%;
-  margin: 10% 0;
+  width: 60%;
+  margin: 10% auto;
 `;
 
 export const Card = styled.div`
@@ -59,6 +91,16 @@ export const Card = styled.div`
     font-weight: 600;
     font-family: "Lexend", sans-serif;
     font-size: 20px;
+  }
+
+  @media (min-width: 700px) {
+    margin: 0;
+    padding: 0 28px;
+    min-height: 290px;
+
+    :not(:last-child) {
+      margin-bottom: 16px;
+    }
   }
 `;
 
@@ -85,6 +127,26 @@ export const ProductDetail = styled(Card)`
     color: var(--grey-1);
     font-weight: 600;
     font-size: 17px;
+  }
+
+  @media (min-width: 700px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+
+    h2 {
+      width: 100%;
+    }
+
+    .tags-wrapper,
+    .value {
+      width: 50%;
+    }
+
+    .value {
+      text-align: right;
+    }
   }
 `;
 
@@ -130,4 +192,76 @@ export const UserInfo = styled(Card)`
     line-height: 28px;
     font-family: "Inter";
   }
+
+  img {
+    border-radius: 100%;
+    width: 60%;
+  }
+
+  @media (min-width: 700px) {
+    padding: 28px;
+    height: 600px;
+  }
 `;
+
+export const Comment = styled(Card)`
+  margin: 0;
+  background-color: var(--whiteFixed);
+  min-height: 190px;
+  width: 100%;
+
+  div {
+    display: flex;
+    align-items: center;
+  }
+
+  div :not(:last-child) {
+    margin-right: 8px;
+  }
+
+  h6 {
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--grey-1);
+  }
+
+  span {
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--grey-3);
+  }
+
+  .grey-dot {
+    background-color: var(--grey-4);
+    border-radius: 100%;
+    width: 4px;
+    height: 4px;
+  }
+
+  img {
+    width: 50px;
+  }
+
+  p {
+    color: var(--grey-2);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    font-family: "Inter";
+    text-align: justify;
+  }
+`;
+
+export const CommentsTitle = styled.h3`
+  background-color: var(--whiteFixed);
+  color: var(--grey-1);
+  font-weight: 600;
+  font-family: "Lexend", sans-serif;
+  font-size: 20px;
+  padding: 5px 20px;
+  border-radius: 6px 6px 0 0;
+`;
+
+export const UserComment = styled(Card)``;
